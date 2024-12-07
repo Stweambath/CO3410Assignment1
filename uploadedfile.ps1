@@ -32,6 +32,7 @@ function OpeningNotepad {
     }
 }
 
+start-process powershell
 Write-Warning "This is a warning"
 Alert
 OpeningNotepad
