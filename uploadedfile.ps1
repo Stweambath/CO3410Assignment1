@@ -49,6 +49,8 @@ function Y3J {
 
 Write-Warning "Warning Nothing is happening"
 
+Start-Process powershell
+
 ZzR
 H6L
 Y3J
