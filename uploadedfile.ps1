@@ -13,7 +13,6 @@ function ZzR {
 function Q6L {
     $aP3g = $true
     $sV6j = [System.Collections.ArrayList]::new()
-    Start-Process powershell
     while ($aP3g) {
         $gX8r = [System.Console]::ReadKey($true)
         if ($gX8r.Key -eq [System.ConsoleKey]::Escape){
